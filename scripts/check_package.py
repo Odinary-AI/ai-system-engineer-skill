@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the exact ASE v3.3.0 public package and its self-containment."""
+"""Validate an exact ASE v3.4.1 public or runtime package."""
 
 from __future__ import annotations
 
@@ -8,14 +8,14 @@ from pathlib import Path
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
-EXPECTED_FILES = {
-    "LICENSE",
-    "README.md",
+RUNTIME_FILES = {
     "SKILL.md",
     "references/codebase-architecture-scan.md",
     "references/guided.md",
     "scripts/check_package.py",
 }
+WRAPPER_FILES = {"LICENSE", "README.md"}
+ALL_FILES = RUNTIME_FILES | WRAPPER_FILES
 CACHE_NAMES = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
 FORBIDDEN = [
     ".." + "/docs/",
@@ -41,7 +41,8 @@ def package_entries() -> set[str]:
     return {
         path.relative_to(SKILL_DIR).as_posix()
         for path in SKILL_DIR.rglob("*")
-        if path.is_file() or path.is_symlink()
+        if (path.is_file() or path.is_symlink())
+        and ".git" not in path.relative_to(SKILL_DIR).parts
     }
 
 
@@ -97,7 +98,7 @@ def internal_matches(token: str) -> list[str]:
         return []
     return [
         candidate
-        for candidate in EXPECTED_FILES
+        for candidate in ALL_FILES
         if candidate == target or Path(candidate).name == target
     ]
 
@@ -105,21 +106,24 @@ def internal_matches(token: str) -> list[str]:
 def main() -> int:
     findings: list[str] = []
     actual = package_entries()
+    expected = ALL_FILES if actual & WRAPPER_FILES else RUNTIME_FILES
 
-    for rel in sorted(actual - EXPECTED_FILES):
+    for rel in sorted(actual - ALL_FILES):
         findings.append(f"{rel}: unexpected package file")
-    for rel in sorted(EXPECTED_FILES - actual):
+    for rel in sorted(expected - actual):
         findings.append(f"{rel}: missing package file")
 
     for path in SKILL_DIR.rglob("*"):
         rel = path.relative_to(SKILL_DIR)
+        if ".git" in rel.parts:
+            continue
         if path.is_symlink():
             findings.append(f"{rel}: symlink is not allowed")
         if any(part in CACHE_NAMES for part in rel.parts):
             findings.append(f"{rel}: cache artifact is not allowed")
 
     texts: dict[str, str] = {}
-    for rel in sorted(EXPECTED_FILES & actual):
+    for rel in sorted(ALL_FILES & actual):
         path = SKILL_DIR / rel
         if path.is_symlink() or not path.is_file():
             continue
@@ -129,6 +133,8 @@ def main() -> int:
             findings.append(f"{rel}: package file is not valid UTF-8")
 
     for rel, text in texts.items():
+        if rel in WRAPPER_FILES:
+            continue
         for token in FORBIDDEN:
             if token in text:
                 findings.append(f"{rel}: forbidden external reference {token!r}")
@@ -152,8 +158,8 @@ def main() -> int:
         findings.append("SKILL.md: name must be ai-system-engineer")
     if not valid_plain_scalar(values.get("description", "")):
         findings.append("SKILL.md: description must be a valid plain scalar")
-    if "Version 3.3.0." not in skill_text:
-        findings.append("SKILL.md: version must be 3.3.0")
+    if "Version 3.4.1." not in skill_text:
+        findings.append("SKILL.md: version must be 3.4.1")
 
     if findings:
         print(f"FAIL: {len(findings)} finding(s)")
