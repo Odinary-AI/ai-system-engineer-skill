@@ -34,6 +34,52 @@ needs.
 **Stop:** Stop descending when the next layer can proceed without guessing and
 more upper-layer design would not change the bounded decision or evidence.
 
+### Architecture expression selection
+
+**Use when:** Understanding, deciding, implementing, validating, reviewing, or
+recovering system relationships may require prose, a table, a diagram, or a
+persistent architecture view.
+
+**Inputs and resources:** The named question, intended reader and next action,
+current authorities and expressions, settled and unresolved relationships,
+available evidence, and any real maintenance or recovery risk.
+
+**Run:** Resolve any meaning the expression would otherwise invent. Reuse an
+adequate current expression. Choose prose for definitions, boundaries,
+invariants, decisions, and prohibitions; choose a table for exact mappings,
+ownership, comparisons, status matrices, and coverage. Choose a diagram only
+when a non-linear relationship becomes materially clearer: environment, scope,
+or external dependencies; logical responsibility, ownership, or dependency;
+state or lifecycle change; call or event sequence; runtime, process, network,
+or deployment; or data, evidence, or authority provenance. Use the project's
+current method and notation when adequate. Combine forms only when each answers
+a distinct part of the named question. For a persistent result, state its role
+and evidence limits. When real maintenance or recovery risk exists, record the
+named question, dependent sources, applicable scope, what it does not answer,
+and a review trigger. A temporary sketch does not require full governance
+metadata. Before returning an explicitly requested rendered visual, execute the
+rendered-delivery rule in `SKILL.md`.
+
+**Return:** The selected minimum expression or justified reuse, the
+relationship and question it answers, its authority or evidence role, and any
+claim limit or review trigger needed by the next context.
+
+**Failure and unsuitable cases:** Do not produce every available form, satisfy
+a requested diagram count, prebuild views for possible future use, or create a
+file merely because architecture was discussed. Do not use a polished view to
+settle unresolved product, lifecycle, responsibility, ownership, trust, or
+authority meaning.
+
+**Authority, evidence, and handoff:** Give each normative question one current
+authority. A derived view references rather than copies that authority and
+returns conflicts to it. Keep candidate design, confirmed meaning, scoped
+implementation or validation evidence, and history distinct; no notation or
+visual style changes their claim strength.
+
+**Stop:** Stop when the intended reader or next action can understand the named
+relationship without guessing and another form would not change the decision,
+implementation, validation, review, or recovery evidence.
+
 ### Product-design constitution
 
 **Use when:** A material L2-L5 choice in a complex project would otherwise
@@ -359,24 +405,74 @@ distinguishing, or return a material trade-off to its owner.
 
 ### Irreversible retirement
 
-**Use when:** Deletion, retirement, destructive migration, or loss of recovery
-would be difficult to reverse.
+**Use when:** Deletion, retirement, destructive migration, loss of recovery, or
+movement out of the active set would be difficult or costly to reverse, affect
+authority or historical interpretation, or leave partial results across
+several objects.
 
-**Inputs and resources:** Replacement evidence, semantic and consumer
-inventory, recovery boundary, residual risks, and accountable decision.
+**Inputs and resources:** The requested action and execution intent, bounded
+scope, exit and authority disposition, replacement evidence, semantic and
+consumer inventory, project reference rules, recovery boundary, available
+governed execution and evidence capability, residual risks, and accountable
+decision.
 
-**Run:** Verify replacement in the relevant environment, disposition consumers
-and semantics, preserve recovery until the decision boundary is crossed, and
-separate reversible preparation from irreversible execution.
+**Run:** Scale preparation and closeout to irreversibility, object count,
+authority impact, and recovery cost; ordinary reversible organization does not
+need the full method. Read-only inspection may identify candidates but leaves
+them pending and changes nothing. Treat not started, pending decision, missing
+preconditions, preflight result, partial execution, completed operations, and
+governance closeout as facts, not a required state machine.
 
-**Return:** Supported preparation, missing evidence, recovery state, and the
-pending or confirmed retirement decision.
+For high-risk or multi-object scope, preflight the complete scope read-only:
+check mappings and cross-object conflicts, dispositions, current semantic or
+operational dependencies, governing scope or authorization statements,
+historical or audit evidence, execution environment, durable allowed evidence
+location, recovery, and unresolved decisions. This is not a closed taxonomy;
+project rules may add reference kinds. A live dependency may block retirement,
+a governing statement needs its own disposition but is not a content
+dependency, and historical evidence preserves the original fact. Report that
+preflight does not authorize execution.
 
-**Failure and unsuitable cases:** Passing target tests alone does not prove
-replacement, zero consumers, safe deletion, or authority to retire.
+After explicit execution intent and the required accountable decision, use the
+verified governed capability for each object independently and retain its
+result evidence. On interruption, preserve completed evidence, identify failed
+and unstarted scope, and establish non-completion before retrying a failed
+object. If the outcome is unknown, stop and reconcile actual state through the
+governed capability without re-execution. Repair only the blocker, recheck
+affected preflight assumptions, and continue only unfinished objects. Never
+infer rollback or atomicity across independent results.
+
+A mechanical correction may continue only when project authority or the
+accountable decision already delegates the deterministic mapping, the change
+is separately auditable, it adds no object and changes no scope, target class,
+authority, visibility, responsibility, or recovery meaning, and the affected
+whole-scope preflight passes again. A target identity not already delegated,
+any listed meaning change, or a new object requires a new accountable decision
+rather than expansion of the prior one.
+
+**Return:** Read-only candidates or supported preparation, missing conditions,
+the explicit per-object completed, failed, and unstarted scope, recovery and
+evidence locations, the pending or confirmed execution decision, and whether
+governance closeout remains open.
+
+**Failure and unsuitable cases:** Passing tests, finding no current consumer,
+finishing a plan or session, completing preflight, or reading a candidate list
+does not prove replacement, safe retirement, or execution authority. Do not
+force this full method onto low-risk reversible organization, silently rewrite
+historical evidence, repeat a completed irreversible operation, bypass a
+required capability, or turn the factual conditions above into a universal
+workflow or schema.
 
 **Authority, evidence, and handoff:** Only the accountable owner authorizes the
-irreversible step; generated evidence cannot substitute.
+irreversible step and material scope changes; generated evidence cannot
+substitute. The governed execution capability owns deterministic validation,
+operation, failure handling, and persistent result evidence under project
+rules; ASE owns system meaning and claim boundaries, not its command or data
+contract.
 
-**Stop:** Stop before destruction unless replacement, disposition, recovery,
-and accountable confirmation are all present.
+**Stop:** Stop before execution unless intent, scope, disposition, recovery,
+required capability, and accountable confirmation support it. Completed object
+operations do not close governance while an in-scope result is unresolved,
+evidence or consistency is unsupported, current authority still incorrectly
+depends on retired content, or temporary execution authority is neither closed
+nor deliberately retained with a reason.

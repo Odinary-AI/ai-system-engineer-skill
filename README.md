@@ -4,7 +4,7 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 3.3.0 provides two instruction levels:
+Version 3.5.0 provides two instruction levels:
 
 - **Compact** is the default and applies the smallest control needed.
 - **Guided** loads additional guidance for work that needs a more detailed
@@ -15,12 +15,11 @@ Version 3.3.0 provides two instruction levels:
 ```bash
 git clone https://github.com/Odinary-AI/ai-system-engineer-skill.git
 mkdir -p ~/.codex/skills/ai-system-engineer
-cp -R ai-system-engineer-skill/README.md \
-  ai-system-engineer-skill/LICENSE \
-  ai-system-engineer-skill/SKILL.md \
+cp -R ai-system-engineer-skill/SKILL.md \
   ai-system-engineer-skill/references \
   ai-system-engineer-skill/scripts \
   ~/.codex/skills/ai-system-engineer/
+python3 ~/.codex/skills/ai-system-engineer/scripts/check_package.py
 ```
 
 For another Agent Skills-compatible host, use that host's normal installation

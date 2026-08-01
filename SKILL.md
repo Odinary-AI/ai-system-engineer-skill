@@ -5,7 +5,7 @@ description: Use when AI-assisted system work crosses product intent, architectu
 
 # AI System Engineer
 
-Version 3.3.0.
+Version 3.5.0.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -35,6 +35,36 @@ lifecycle.
 6. Stop when the bounded claim is supported and remaining uncertainty is
    explicit; escalate only for a named risk, failure, authority boundary, or
    irreversible consequence.
+
+## Architecture expression selection
+
+Before creating or revising an architecture expression, name the question and
+choose the smallest sufficient expression. Reuse an adequate current
+expression; if prose, a short list, or the existing authority is enough, do not
+create a new diagram or file. Use prose for meaning and boundaries, a table for
+exact mapping or comparison, and a diagram only when structure, dependency,
+change, sequence, runtime, deployment, or provenance becomes materially clearer
+nonlinearly. Combine forms only when each answers a distinct necessary
+question. A requested diagram count, chosen notation, or possible future use
+is not a reason to add an expression. Resolve unresolved meaning before
+depicting it as settled.
+
+For a persistent expression, identify whether it is formal semantic authority,
+an authority-constrained derived view, candidate design, implementation or
+validation evidence, or historical material. A derived view references its
+current source and cannot silently become a second authority. Keep current and
+future, logical and physical, confirmed, implemented, and verified, and partial
+evidence and system completion distinct. Add sources, scope, claim limits, and
+review triggers only in proportion to real maintenance or recovery risk.
+
+For an explicit rendered-visual request, create or render a form supported by
+the destination, observe the actual user-visible result or a delivered
+inspectable artifact, inspect it, then show or attach that verified result.
+Check readability, hierarchy, authority, scope, and evidence role during
+inspection. Authoring renderable source, expecting downstream rendering, or
+describing a result as rendered does not constitute inspection. If observation
+is unavailable, explicitly report that delivery was not verified or completed.
+Source alone satisfies only an explicit source request.
 
 ## Conditional altitude check
 
@@ -89,6 +119,8 @@ implementation that depends on the unresolved decision.
   behavior and evidence as inputs, not an oracle; give compatibility a named
   consumer and exit.
 - Package or installation claim: exact mirror plus real-environment smoke.
+  For this Skill's package-structure check, run `scripts/check_package.py`;
+  its result supports structure and self-containment only, not installation or runtime behavior.
   Keep source, package, personal installation, tag, and public release as
   separate claim objects. Stop at the strongest claim object actually
   exercised.
@@ -144,6 +176,30 @@ implementation that depends on the unresolved decision.
   scope, current authority, supported and unsupported claims, evidence and
   reopen triggers, next action, and pending human decision. Hidden chat,
   obsolete plans, or unrouted history leave continuity unsupported.
+- When an active-authority file enters an excluded immutable archive, classify
+  it as irreversible retirement, not ordinary organization, deletion, or later
+  archive editing. Require an exit reason, authority or replacement
+  disposition, reference and consumer disposition, a recovery boundary, and
+  accountable confirmation; then route one file at a time to a verified
+  controlled archive intake that preserves ordinary excluded-path blocking.
+  If any lifecycle prerequisite remains unresolved, if any required
+  configuration for the active-source root, archive root, or approval type is
+  absent or invalid, or if the capability is unavailable or does not complete,
+  stop without a bypass and leave retirement unproven. Process multiple files
+  separately; do not claim atomic multi-file intake.
+- Read-only candidate identification and preflight do not authorize irreversible
+  execution; require explicit execution intent for the bounded scope. For
+  multiple in-scope objects, perform a read-only whole-scope conflict check
+  before the first irreversible operation, then execute and evidence each
+  object independently; do not claim batch atomicity. If execution stops
+  partway, preserve completed evidence, distinguish completed, failed, and
+  unstarted scope. Before retrying a failed object, prove that it did not
+  complete; treat an unknown outcome separately and reconcile it without
+  re-execution. Resume only failed or unstarted objects after their blockers
+  are resolved; continuation does not extend the accountable decision.
+  Completed object operations do not prove governance closeout: verify the
+  current authority and affected consumers, result evidence, and disposition
+  of any temporary execution authority before making that claim.
 - Before irreversible retirement or deletion, require replacement evidence,
   semantic and consumer disposition, a recovery boundary, and accountable
   confirmation.
