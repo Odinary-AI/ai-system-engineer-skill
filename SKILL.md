@@ -1,6 +1,6 @@
 ---
 name: ai-system-engineer
-description: Use when AI-assisted system work crosses product intent, architecture, authority, lifecycle, migration, recovery, irreversible change, or readiness-claim boundaries, or when a user requests an on-demand read-only codebase architecture scan. Do not use for routine coding or mechanical local refactors unless they expose one of those boundaries.
+description: Use only when work must resolve a material cross-layer system decision, authority or lifecycle boundary, irreversible migration or recovery decision, readiness claim that ordinary implementation evidence cannot settle, or local choice depending on unresolved upper-layer meaning; also use for an explicit ASE request or read-only architecture scan. Do not use for routine coding, local refactors, ordinary debugging, documentation edits, package operations, or standard verification when requirements and authority are settled.
 ---
 
 # AI System Engineer
@@ -9,6 +9,25 @@ Version 3.5.0.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
+
+## Applicability and exit gate
+
+Before using any ASE method, name a specific unresolved system boundary and
+state what material decision, action, or claim it blocks. For an explicit
+read-only architecture scan, name the concrete architecture question and the
+restructuring decision it will inform; the diagnosis may then determine
+whether an unresolved boundary exists. If neither item can be named,
+immediately stop using ASE and return to the ordinary task workflow.
+
+Keywords alone—including architecture, recovery, migration, lifecycle, and
+readiness—do not establish applicability. Task size, file count, duration, or
+use of several modules does not establish it either. An explicit ASE request
+loads this gate but does not waive it.
+
+Using ASE does not automatically invoke another governance Skill or workflow,
+create a governance file, add a project gate, or expand verification scope. Do
+any of those only when independently required by the task and its applicable
+instructions.
 
 ## Instruction level
 
@@ -25,7 +44,7 @@ lifecycle.
 
 ## Control loop
 
-1. Detect the named system boundary, decision, or claim.
+1. Use the system boundary and blocker named at the applicability gate.
 2. Locate the highest unresolved meaning that the requested action depends on.
 3. Resolve only what the next action needs; keep the user's accountable
    decisions with the user.
