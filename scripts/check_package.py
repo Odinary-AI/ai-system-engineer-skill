@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the exact ASE v4.0.0 source package and its self-containment."""
+"""Validate the exact ASE v4.1.0 source package and its self-containment."""
 
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ from pathlib import Path
 SKILL_DIR = Path(__file__).resolve().parents[1]
 EXPECTED_FILES = {
     "SKILL.md",
+    "references/ai-coding-delivery.md",
     "references/codebase-architecture-scan.md",
     "references/guided.md",
     "scripts/check_package.py",
@@ -150,8 +151,8 @@ def main() -> int:
         findings.append("SKILL.md: name must be ai-system-engineer")
     if not valid_plain_scalar(values.get("description", "")):
         findings.append("SKILL.md: description must be a valid plain scalar")
-    if "Version 4.0.0." not in skill_text:
-        findings.append("SKILL.md: version must be 4.0.0")
+    if "Version 4.1.0." not in skill_text:
+        findings.append("SKILL.md: version must be 4.1.0")
 
     if findings:
         print(f"FAIL: {len(findings)} finding(s)")

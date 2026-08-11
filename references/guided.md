@@ -48,6 +48,37 @@ more upper-layer design would not change its bounded decision or evidence. If a
 consistency result is blocked or reopen, stop the affected branch and return to
 the smallest owning layer.
 
+### AI coding delivery orchestration
+
+**Use when:** A material version or end-to-end delivery scope satisfies the
+delivery trigger in `SKILL.md`; ordinary settled coding does not.
+
+**Inputs and resources:** Current layer authorities and confirmations, version
+scope, candidate or existing slices, L3 dependencies, implementation evidence,
+risk predicates, and accountable selection policy.
+
+**Run:** Read `references/ai-coding-delivery.md` once and apply only its
+applicable sections. Do not redefine the delivery objects, authority, claim
+ceilings, confirmation bands, or re-entry conditions declared in `SKILL.md`.
+Select or route the slice, check L3 sufficiency, hand off bounded work units,
+and aggregate only evidence actually observed.
+
+**Return:** The selected slice and authority route, reused and reopened scope,
+work-unit handoffs, dependency and write ownership, evidence at work-unit,
+slice, and version scope, unsupported claims, and reopen conditions.
+
+**Failure and unsuitable cases:** Do not keep ASE active for ordinary coding,
+create a project template, infer a higher-scope completion claim, or impose a
+risk control whose predicate is absent.
+
+**Authority, evidence, and handoff:** AI may execute a preconfirmed reversible
+selection policy but cannot change value, authority, acceptance, or material
+risk boundaries. Tests and agents create evidence only.
+
+**Stop:** Return to ordinary coding when the handoff is bounded. Re-enter ASE
+only on a core cross-layer conflict, invalidated authority, irreversible
+consequence, or slice or version closure claim.
+
 ### Architecture expression selection
 
 **Use when:** Understanding, deciding, implementing, validating, reviewing, or

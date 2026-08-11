@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 4.0.0.
+Version 4.1.0.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -288,6 +288,69 @@ downstream scope, and invalidation conditions. On failure, do not close the
 current layer or band. Reopen the smallest affected owning layer and invalidate
 dependent downstream results, views, and confirmations; repair, freshly check,
 and reconfirm only the affected scope.
+
+## Delivery scope and claim aggregation
+
+For material AI-coding delivery closure, distinguish **Version Scope**,
+**Vertical Delivery Slice**, and **AI Work Unit**. They are delivery and claim
+objects, not architecture layers. An AI Work Unit does not prove a Vertical
+Delivery Slice complete. A Vertical Delivery Slice does not prove a Version
+Scope complete. Give each object its authority sources, bounded scope, status,
+evidence, unsupported claims, and invalidation or reopen condition.
+
+Define each Vertical Delivery Slice at L2 as the smallest independently
+assessable operational scenario and outcome. Make it implementable at L3, then
+implement and verify it at L4. Trace it to still-valid L0-L1 meaning; do not
+mechanically reopen L0-L1. For a complex new delivery path, prefer a walking
+skeleton that exercises the real integration and evidence path. Enabler work
+must name the slice it unblocks and cannot claim business value by itself.
+
+AI may propose, compare, and recommend candidate slices. AI may select one only
+inside still-valid human-confirmed L0-L2 meaning, under a preconfirmed selection
+policy, when the choice is reversible and changes no product priority,
+authority, contract, acceptance meaning, red line, or material risk boundary.
+Otherwise the accountable human selects through the existing Operational and
+Contract Band. This slice decision does not create a fourth confirmation.
+
+For an iteration, identify the highest affected layer for each changed scope.
+Reuse unaffected layers, views, confirmations, slices, and evidence. Reopen
+that layer and only its dependent downstream scope; invalidate a reused result
+only when changed meaning or evidence affects it. A formal version candidate
+aggregates changed and reused slices, runs required cross-slice checks and the
+L0-to-L4 end-to-end check, and uses the existing final band. Release approval
+remains separate unless explicitly included in its accountable scope.
+
+Roll up work-unit evidence only after integration into its named slice. Slice
+closure requires slice-level scenario, contract, integration, failure, and
+recovery evidence applicable to its claim. Version closure additionally
+requires version-level cross-slice regression, affected architecture and
+dependency consistency, and required operational evidence. A higher-scope
+status cannot be inferred from lower-scope evidence. Tests cannot create
+`human_confirmed`.
+
+Before ordinary implementation, hand off a bounded AI Work Unit with objective,
+authority sources, allowed scope, non-goals, acceptance, required checks,
+dependencies, stop condition, and reopen route. Work in small independently
+reviewable and integrable batches. Maintain one active write owner for
+overlapping files, interfaces, schemas, or data contracts; parallelize only
+independent non-overlapping scope with explicit integration obligations.
+
+Add risk-specific evidence only when its observable predicate applies:
+
+- For authentication, authorization, personal or secret data, or external
+  dependencies, check the applicable security and supply-chain boundary.
+- For a migration, public contract, protocol, or irreversible data change,
+  check compatibility, partial transition, repair, rollback, and the
+  irreversible point.
+- For a production or operational claim, require the applicable environment,
+  rollout, monitoring, failure-absorption, and recovery evidence.
+
+Apply these controls only when the named risk is present. Once the handoff is
+bounded and upper meaning is settled, return to the ordinary coding workflow.
+Re-enter ASE only for a named cross-layer conflict, invalidated authority,
+irreversible consequence, or slice or version closure claim. For detailed
+execution, read `references/ai-coding-delivery.md` only when this section
+applies.
 
 ## Cross-layer decision controls
 
