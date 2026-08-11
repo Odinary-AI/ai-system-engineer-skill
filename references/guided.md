@@ -8,31 +8,45 @@ or record merely because Guided is active.
 
 ## Shared methods
 
-### Conditional altitude reasoning
+### Five-layer closure execution
 
 **Use when:** Work crosses several system boundaries or a lower-layer choice
 would otherwise guess higher-level meaning.
 
 **Inputs and resources:** The requested outcome, current authorities, known
-constraints, affected boundaries, evidence, and unresolved decisions.
+constraints, affected boundaries, evidence, unresolved decisions, applicable
+project-local model, prior confirmations, and current derived views.
 
-**Run:** Start at the highest uncertain L0–L5 altitude. Resolve only the meaning
-the next lower layer needs. At each descent, check sufficiency for the next
-action and proportionality to the requested claim and risk.
+**Run:** Read the layer contracts in `SKILL.md`; do not redefine them here.
+First resolve whether a binding project-local model applies. Otherwise locate
+the highest unresolved L0–L4 meaning, activate only affected layers, and reuse
+still-valid upper meaning and confirmation. At every active exit, check the
+direct upper-layer mapping. Produce or refresh the applicable one of the four
+derived views with its sources, scope, status, gaps, evidence limits, and
+reopen condition. Stop at each applicable one of the three confirmation bands
+until its accountable human records a result. Before dependent implementation,
+run the L3-to-L4 sufficiency check; before final-band confirmation, run the
+L0-to-L4 end-to-end check.
 
-**Return:** The bounded decisions, owners, constraints, and reopen conditions
-needed by the next action.
+**Return:** The active and reused layers, required semantic outputs, applicable
+view updates, confirmation state, and each consistency result: checked layers
+and source versions, satisfied mappings, gaps or conflicts, status, affected
+downstream scope, and invalidation conditions.
 
 **Failure and unsuitable cases:** Do not use for routine local work or expand
-every altitude. A polished architecture artifact does not cure unresolved
-authority.
+every altitude or layer. Do not impose the default model on a binding
+project-local model, turn semantic outputs into fixed files, or use a polished
+view to cure unresolved authority.
 
 **Authority, evidence, and handoff:** Return human-owned meaning to its
-accountable owner. Record only decisions and evidence another context actually
-needs.
+accountable owner. Keep proposed, human-confirmed, implemented, verified, and
+release claims distinct. A view derives from current authority; it does not
+replace it.
 
 **Stop:** Stop descending when the next layer can proceed without guessing and
-more upper-layer design would not change the bounded decision or evidence.
+more upper-layer design would not change its bounded decision or evidence. If a
+consistency result is blocked or reopen, stop the affected branch and return to
+the smallest owning layer.
 
 ### Architecture expression selection
 
@@ -82,7 +96,7 @@ implementation, validation, review, or recovery evidence.
 
 ### Product-design constitution
 
-**Use when:** A material L2-L5 choice in a complex project would otherwise
+**Use when:** A material L2-L4 choice in a complex project would otherwise
 invent a recurring cross-layer product principle, red line, or precedence.
 
 **Inputs and resources:** Settled L0-L1 authorities, existing product
@@ -273,7 +287,7 @@ boundary.
 **Stop:** Stop when the next governed action can use one unambiguous meaning,
 or when an explicit human-owned domain decision blocks it.
 
-### L4 deep modules
+### L3 deep modules
 
 **Use when:** Designing or materially changing a module boundary, public
 interface, dependency seam, adapter, or module-level test strategy.
@@ -300,7 +314,7 @@ splits.
 cleaner, create a seam for a hypothetical variation, expose internals for
 testing, or optimize implementation-line ratios.
 
-**Authority, evidence, and handoff:** L4 cannot invent unresolved L0–L3
+**Authority, evidence, and handoff:** L3 cannot invent unresolved L0–L2
 meaning. Adapters do not own domain facts. Hand off public contracts and
 failure boundaries, not internal layout as product truth.
 

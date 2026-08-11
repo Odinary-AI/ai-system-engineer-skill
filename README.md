@@ -4,11 +4,17 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 3.5.0 provides two instruction levels:
+Version 4.0.0 adds a default five-layer closure model, four derived
+architecture views, three accountable-human confirmation bands, and
+cross-layer consistency checks. It retains two instruction levels:
 
 - **Compact** is the default and applies the smallest control needed.
 - **Guided** loads additional guidance for work that needs a more detailed
   method.
+
+A binding project-local model remains authoritative. Installing this Skill
+does not automatically renumber, migrate, or reapprove an existing project's
+architecture or evidence.
 
 ## Install in Codex
 

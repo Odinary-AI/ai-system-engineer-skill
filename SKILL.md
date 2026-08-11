@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 3.5.0.
+Version 4.0.0.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -85,16 +85,213 @@ describing a result as rendered does not constitute inspection. If observation
 is unavailable, explicitly report that delivery was not verified or completed.
 Source alone satisfies only an explicit source request.
 
-## Conditional altitude check
+## Project-local model precedence
 
-For work crossing several system boundaries, reason from the highest uncertain
-altitude: L0 Product, L1 System, L2 Lifecycle, L3 Capability, L4 Module, L5
-Implementation. Descend only when the next layer can proceed without guessing.
-Exit when the next layer has sufficient governed meaning and more upper-layer
-design would not change the bounded decision or its evidence. Do not create an
-architecture artifact merely because this check was used.
+Use the default five-layer model below only when no binding project-local model
+exists for the affected scope. When one exists, the project-local model and
+authority win. Do not automatically renumber, rewrite, migrate, or reapprove
+its architecture or evidence. A translation is a candidate mapping only; if it
+changes meaning, authority, approval scope, or maintained consumers, require
+explicit bounded human approval before migration. Installing this Skill does
+not migrate a project.
 
-When a material L2-L5 choice depends on recurring cross-layer product
+## Five-layer architecture closure
+
+For work that crosses system meanings, apply the control loop and treat the
+highest unresolved active layer as the highest uncertain altitude. Do not
+mechanically start at L0. Activate only the layers whose meaning or evidence is
+unresolved, reuse still-valid upper-layer meaning and confirmations, and
+descend only when the next layer can proceed without guessing. Exit when more
+upper-layer design would not change the bounded decision or its evidence.
+Required outputs are semantics, not mandatory documents. Keep `proposed`,
+`human_confirmed`, `implemented`, and `verified` distinct at every layer.
+
+### L0 Product Position
+
+**Owns:** Why the product should exist and which outcome it is accountable for.
+
+**Minimum inputs:** The affected users or beneficiaries, observed problem or
+opportunity, current product authority, material constraints, and known red
+lines.
+
+**Required semantic outputs:** Target users, intended value and outcome,
+success signals, in-scope and out-of-scope results, non-goals, and product red
+lines.
+
+**Exit standard:** The accountable owner can distinguish success, failure, and
+out-of-scope results without relying on a proposed system or implementation.
+
+**Authority boundary:** Only the accountable product owner confirms product
+position; technical feasibility evidence cannot silently redefine it.
+
+**Constrains:** L1 system responsibility and every downstream claim.
+
+**Reopen when:** The target users, intended outcome, scope, red line, or success
+meaning changes or proves unsupported.
+
+### L1 System Definition and Boundaries
+
+**Owns:** What the system is responsible for, what it excludes, and how it
+relates to people, organizations, and external systems.
+
+**Minimum inputs:** Still-valid L0 meaning, current system context and
+authority, external actors and systems, ownership, material constraints,
+trust boundaries, and system-level risks or unproven dependencies.
+
+**Required semantic outputs:** System responsibility, boundary and context,
+external relationships, accountable ownership, system invariants, material
+constraints, and system-level failure absorption or fallback.
+
+**Exit standard:** L2 can define operation without inventing system
+responsibility. L1 does not settle the full solution architecture.
+
+**Authority boundary:** Confirm product or system responsibility with its
+accountable owner; keep solution choices that do not change it below L1.
+
+**Constrains:** L2 operational authority and domain contracts, and all later
+solution and evidence claims.
+
+**Reopen when:** System responsibility, boundary, external relationship,
+ownership, invariant, or system-level dependency changes or is contradicted.
+
+### L2 Operational Model, Authority, and Domain Contracts
+
+**Owns:** How the system operates, how domain state changes, and who may decide
+or perform each material action.
+
+**Minimum inputs:** Still-valid L1 meaning, representative operational
+scenarios, domain facts, roles and authority sources, lifecycle constraints,
+compliance obligations, and known failure or recovery cases.
+
+**Required semantic outputs:** Operational flows, state transitions, roles and
+decision rights, domain rules and contracts, invariants, exceptions, and
+failure and recovery semantics.
+
+**Exit standard:** L3 can design without inventing domain policy, operational
+authority, lifecycle meaning, or system responsibility.
+
+**Authority boundary:** Accountable domain and authority owners confirm
+material rules and decision rights; a technical design cannot create them.
+
+**Constrains:** L3 capabilities, components, interfaces, data responsibility,
+and failure mechanisms.
+
+**Reopen when:** A flow, state, domain rule, authority, invariant, exception,
+or recovery obligation changes or conflicts with L1.
+
+### L3 Solution Architecture and Design
+
+**Owns:** How governed product, system, operational, and domain meaning is
+realized as a coherent technical solution.
+
+**Minimum inputs:** Still-valid L2 contracts, current technical authorities,
+quality attributes, platform and delivery constraints, dependency facts, and
+relevant feasibility evidence.
+
+**Required semantic outputs:** Required capabilities, component and module
+responsibilities, public interfaces, data ownership and movement, dependency
+direction, runtime or deployment mechanisms when material, failure handling,
+and traceability to L2 contracts.
+
+**Exit standard:** L4 can implement without guessing design meaning, and the
+L3-to-L4 implementation-sufficiency check passes.
+
+**Authority boundary:** Keep material architecture choices with the
+accountable owner; AI may choose reversible implementation details inside the
+confirmed design boundary.
+
+**Constrains:** L4 implementation scope, tests, validation, and supported
+claims.
+
+**Reopen when:** A governed contract, component responsibility, interface,
+data owner, dependency, quality attribute, or failure mechanism changes or
+proves infeasible.
+
+### L4 Implementation and Verification
+
+**Owns:** What was actually implemented and what the observed evidence can
+support.
+
+**Minimum inputs:** Still-valid L3 design, bounded implementation scope,
+source and runtime environment, acceptance and verification criteria,
+deviations, and required operational evidence.
+
+**Required semantic outputs:** Implemented scope, verification results and
+environment, traceability to design, deviations, failures, residual risks,
+unsupported claims, and invalidation conditions.
+
+**Exit standard:** Implementation matches the confirmed design, required
+verification passes for the bounded claim, and the L0-to-L4 end-to-end
+consistency check passes before final confirmation.
+
+**Authority boundary:** Implementation and tests create implementation or
+verification evidence only; they cannot create product acceptance,
+`human_confirmed`, release approval, or system completion.
+
+**Constrains:** Only the bounded operational, readiness, installation, or
+release claims actually supported by corresponding evidence.
+
+**Reopen when:** Implementation diverges from design, evidence becomes stale or
+invalid, a required check fails, or an upper-layer meaning changes.
+
+## Derived architecture views
+
+When L1 exits, generate or refresh the **Product and System Intent View** from
+L0-L1. When L2 exits, generate or refresh the **Operational and Domain Contract
+View**. When L3 exits, generate or refresh the **Solution Design View**. When L4
+implementation completes, generate or refresh the **Implementation and
+Evidence View** with `implemented` status; refresh it after verification with
+`verified` status.
+
+Each view is a smallest-sufficient, authority-constrained presentation for its
+reader, not a second semantic authority. Reference its sources, scope, status,
+unresolved items, evidence limits, and reopen condition. Reuse an adequate
+current view and refresh only affected views. Automatic view production does
+not by itself create a persistent file or require a diagram; use the
+architecture-expression rule above to choose prose, table, diagram, or reuse.
+
+## Three mandatory confirmation bands
+
+For an end-to-end closure, require three separate accountable-human
+confirmations:
+
+1. **Product and System Band (L0-L1):** after L1 exits, confirm product position,
+   system responsibility, boundaries, ownership, and material constraints.
+2. **Operational and Contract Band (L2):** after L2 exits, confirm flows, state,
+   domain contracts, authority, failure, and recovery meaning.
+3. **Design and Implementation Band (L3-L4):** after L4 evidence and the
+   end-to-end check are ready, confirm design, implementation, verification,
+   deviations, and residual risk for the named scope.
+
+Record each result as `human_confirmed`, `rejected`, or `reopen`. Do not merge
+or skip confirmations because one person owns all three bands. An existing
+still-valid confirmation may satisfy its named checkpoint; do not request it
+again unless affected meaning or evidence reopens. The L3-to-L4 automatic
+check does not create a fourth human confirmation. Final-band confirmation
+does not imply release approval unless release is explicitly in its scope.
+
+## Cross-layer consistency
+
+Before each L1-L4 layer exits, compare its required outputs with the direct
+upper layer and resolve any missing mapping, contradiction, or invented meaning.
+Additionally:
+
+- Before L4 work that depends on L3 begins, run the **L3-to-L4
+  implementation-sufficiency check**; dependent implementation stops if the
+  design cannot support it without guessing.
+- Before closing the final band, run the **L0-to-L4 end-to-end consistency
+  check** so locally consistent adjacent layers cannot hide cumulative drift.
+
+Return each consistency result with checked layers, source versions, satisfied
+mappings, gaps or conflicts, a pass, blocked, or reopen status, affected
+downstream scope, and invalidation conditions. On failure, do not close the
+current layer or band. Reopen the smallest affected owning layer and invalidate
+dependent downstream results, views, and confirmations; repair, freshly check,
+and reconfirm only the affected scope.
+
+## Cross-layer decision controls
+
+When a material L2-L4 choice depends on recurring cross-layer product
 principles, red lines, or precedence, use the current product-design
 constitution or equivalent authority; reuse an adequate current authority. If
 it is absent, conflicting, or cannot distinguish the alternatives, do not
@@ -103,9 +300,10 @@ authority boundary, actionable principles, non-negotiable red lines with
 source and scope, conflict precedence, and bounded deviation conditions; when
 a long-term vision or research source exists, separate it from current
 commitments; do not require a vision document, and do not require a new file.
-The constitution guides L2-L5 but cannot change L0-L1; reopen the owning altitude if product or
-system meaning changes. Do not apply this to ordinary reversible work with
-settled criteria.
+The constitution guides L2-L4 but cannot change L0-L1; reopen the owning
+altitude if product or system meaning changes, using the owning layer in the
+active model. Do not apply this to ordinary reversible work with settled
+criteria.
 
 If an unproven technical capability supports a product value, system
 definition, or readiness claim and its failure would change L0 or L1 meaning,
@@ -119,7 +317,7 @@ The contract, not completed validation, is the closure requirement; validation
 responsibility and safe failure absorption may not remain implicit. External,
 model-generated, or small-sample evidence supports only its observed scope,
 not this system's production feasibility. Do not apply this to an ordinary
-choice or an innovation replaceable inside governed L3-L5 meaning; route an
+choice or an innovation replaceable inside governed L3-L4 meaning; route an
 unanswered design-changing unknown through the existing method trigger below.
 
 For a material unresolved human-owned decision, use a Socratic decision-tree
@@ -151,7 +349,7 @@ implementation that depends on the unresolved decision.
   confirmed authority, never promote an AI proposal to domain truth, and stop
   when the next governed action has one usable meaning or a human-owned
   decision is explicit.
-- L4 module boundary or public interface at risk: deep-module and seam
+- L3 solution or module boundary or public interface at risk: deep-module and seam
   analysis. Prefer a narrow stable interface around real responsibility,
   authority, lifecycle, failure, dependency, or change boundaries; adapters
   translate protocols, not business truth. Reject forwarding-only splits and
@@ -177,7 +375,7 @@ implementation that depends on the unresolved decision.
 ## Hard boundaries
 
 - Give each normative question one current authority for its scope. A lower
-  layer cannot invent product, system, lifecycle, capability, or authority
+  layer cannot invent product, system, operational, domain, design, or authority
   meaning owned above it.
 - AI may choose reversible implementation details inside governed boundaries.
   Material product, architecture, authority, lifecycle, and irreversible

@@ -70,7 +70,7 @@ friction makes reconsideration proportionate.
 
 ## Inspect architecture friction
 
-Apply the existing L4 deep-module and seam meanings. Use module, interface,
+Apply the existing L3 deep-module and seam meanings. Use module, interface,
 seam, adapter, depth, locality, leverage, and test surface consistently; do not
 create another architecture vocabulary.
 
@@ -187,7 +187,7 @@ Stop after the candidate report or the no-supported-candidate result.
 When the user selects a candidate, end this diagnosis and start a separate
 `design-change`. In the first continuation response, state that the diagnosis
 has ended and a separate `design-change` has begun before asking design
-questions. Re-establish the selected goal and scope, current L4 responsibility
+questions. Re-establish the selected goal and scope, current L3 responsibility
 and authority, alternatives when risk warrants, migration and compatibility,
 recovery and stopping, test surface and realistic evidence, and human decision
 boundaries before implementation.
