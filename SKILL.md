@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 4.1.0.
+Version 4.1.1.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -297,6 +297,41 @@ objects, not architecture layers. An AI Work Unit does not prove a Vertical
 Delivery Slice complete. A Vertical Delivery Slice does not prove a Version
 Scope complete. Give each object its authority sources, bounded scope, status,
 evidence, unsupported claims, and invalidation or reopen condition.
+
+Multi-version planning is a delivery-planning horizon, not an architecture
+layer. For successive versions in one product, system responsibility, and
+continuous evolution chain, reuse one current architecture authority and vary
+design depth by planning horizon, without mechanically repeating layers,
+confirmations, or derived views:
+
+- **Current delivery horizon:** complete the affected-layer closure, produce an
+  implementable design, and obtain the implementation, verification, and
+  evidence required for that version's claim. Reuse still-valid upper meaning,
+  views, and confirmations.
+- **Next delivery horizon:** design only far enough to prevent a foreseeable
+  current-version block. Identify expected user outcomes and key operational
+  scenarios; cross-layer effects on current product and system meaning, domain
+  contracts, interfaces, data ownership, and quality attributes; the minimum
+  architecture runway the current version must preserve; and unproven critical
+  assumptions, their least-cost validation, and triggers for re-entering
+  detailed design. This does not support implementation-level design,
+  verification, or version-closure claims for the next version.
+- **Longer-term horizon:** retain only direction, red lines, key assumptions,
+  and triggers for more detailed design. Do not freeze modules, interfaces,
+  implementation choices, verification conclusions, or human confirmation.
+
+Planning horizons are not fixed depth quotas. Deepen a future horizon only for
+the affected scope when it contains an irreversible or high-migration-cost
+decision, long-lead dependency, cross-version shared contract, public interface,
+or data model, a security, compliance, recovery, or operational risk that would
+change the current design, or a technical assumption whose prior validation is
+required for the current product or system commitment. If a future version
+changes current product position, system responsibility, domain rules, or other
+upper meaning, reopen the highest affected owning layer and its downstream
+scope; do not treat the change as architecture runway. If named versions belong
+to a different product, system responsibility, or discontinuous evolution
+chain, give each its own architecture closure instead of applying this shared
+multi-version rule.
 
 Define each Vertical Delivery Slice at L2 as the smallest independently
 assessable operational scenario and outcome. Make it implementable at L3, then

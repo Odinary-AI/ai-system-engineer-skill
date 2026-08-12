@@ -4,12 +4,12 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 4.1.0 adds bounded Version Scope, Vertical Delivery Slice, and AI Work
-Unit objects for AI-coding delivery without adding another architecture layer.
-It also adds human-AI slice selection, walking-skeleton and evidence-rollup
-boundaries, small-batch write ownership, and risk-triggered security,
-migration, compatibility, and runtime checks. It retains the default
-five-layer closure model and two instruction levels:
+Version 4.1.1 adds planning-horizon depth rules for current, next, and
+longer-term versions in one continuous product and system evolution chain. It
+preserves one current architecture authority while adding bounded architecture
+runway and risk-driven early-deepening rules. It retains the v4.1.0 delivery
+objects and controls, the default five-layer closure model, and two instruction
+levels:
 
 - **Compact** is the default and applies the smallest control needed.
 - **Guided** loads additional guidance for work that needs a more detailed
