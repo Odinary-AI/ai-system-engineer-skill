@@ -4,11 +4,14 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 4.1.1 adds planning-horizon depth rules for current, next, and
-longer-term versions in one continuous product and system evolution chain. It
-preserves one current architecture authority while adding bounded architecture
-runway and risk-driven early-deepening rules. It retains the v4.1.0 delivery
-objects and controls, the default five-layer closure model, and two instruction
+Version 4.2.0 strengthens L0 product-position closure. It requires the
+confirmed core problem or opportunity, evidence-aware success and failure
+meaning, and product-position reopen conditions while adding supplements only
+when observable risks apply, including non-user third-party impact, critical
+unproven dependencies, validation-to-formal-use transitions, separate product,
+environment, and adoption conclusions, and economic adoptability. It fixes the
+semantic questions without imposing a section count, headings, or document
+form, and retains the default five-layer closure model and two instruction
 levels:
 
 - **Compact** is the default and applies the smallest control needed.

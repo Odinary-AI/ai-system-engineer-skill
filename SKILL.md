@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 4.1.1.
+Version 4.2.0.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -114,20 +114,56 @@ Required outputs are semantics, not mandatory documents. Keep `proposed`,
 opportunity, current product authority, material constraints, and known red
 lines.
 
-**Required semantic outputs:** Target users, intended value and outcome,
-success signals, in-scope and out-of-scope results, non-goals, and product red
-lines.
+**Required semantic outputs:** Answer fixed questions, not a fixed document
+shape: target users and beneficiaries; the confirmed core problem or
+opportunity and reason the product should exist; intended value, outcome, and
+product responsibility; decision meaning that distinguishes success, failure,
+out-of-scope results, and when insufficient or invalid evidence permits no
+conclusion; in-scope and out-of-scope results and non-goals; material
+constraints and product red lines; and conditions that invalidate or reopen
+the product position. A project may merge or split these semantics without
+duplicate authority. Do not prescribe a section count, headings, artifact
+form, or discussion order.
 
-**Exit standard:** The accountable owner can distinguish success, failure, and
-out-of-scope results without relying on a proposed system or implementation.
+Add only the supplements whose observable predicates apply:
 
-**Authority boundary:** Only the accountable product owner confirms product
-position; technical feasibility evidence cannot silently redefine it.
+- If outputs can materially affect people, groups, or organizations that are
+  not users, identify the affected parties, plausible harms, and rights
+  boundaries.
+- If an unproven capability supports core L0 or L1 value and its failure would
+  change product position or system responsibility, use the existing
+  innovation-dependency contract below. Before L0 closes, make its assumption
+  and scope, supported product conclusion, minimum evidence, validation owner,
+  cheapest disposable validation, fallback, and L0 reopen condition explicit
+  in that authority; do not copy the full contract into L0.
+- If experimental, shadow, limited-pilot, and formal-use states differ,
+  distinguish their claim boundaries. Without the specific-use validation
+  required for a state, do not claim suitability for that use.
+- If product claim, project or environment applicability, and formal adoption
+  depend on different evidence or accountable decisions, keep the conclusions
+  distinct; they cannot substitute for one another. Keep only the conclusion
+  boundaries in L0, system boundaries in L1, and teams, process, permissions,
+  and operational responsibility in L2.
+- If core value depends on total cost, cycle time, or practical adoptability,
+  define the comparison scope, costs that cannot be hidden, minimum evidence,
+  fallback, and corresponding reopen condition.
+
+**Exit standard:** All core semantics are complete; every supplement whose
+predicate is observed is resolved, while untriggered supplements are not added
+mechanically. The accountable owner can distinguish success, failure,
+out-of-scope, and currently inconclusive results without depending on an
+undefined system or implementation.
+
+**Authority boundary:** Only the accountable product owner may mark L0
+`human_confirmed`; technical feasibility evidence cannot silently redefine
+product position.
 
 **Constrains:** L1 system responsibility and every downstream claim.
 
-**Reopen when:** The target users, intended outcome, scope, red line, or success
-meaning changes or proves unsupported.
+**Reopen when:** A user or beneficiary, core problem or opportunity, reason to
+exist, intended value, outcome, product responsibility, scope, constraint, red
+line, decision meaning, or triggered supplement changes or proves unsupported,
+or a recorded invalidation or reopen condition occurs.
 
 ### L1 System Definition and Boundaries
 
