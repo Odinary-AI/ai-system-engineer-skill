@@ -4,22 +4,21 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 4.2.0 strengthens L0 product-position closure. It requires the
-confirmed core problem or opportunity, evidence-aware success and failure
-meaning, and product-position reopen conditions while adding supplements only
-when observable risks apply, including non-user third-party impact, critical
-unproven dependencies, validation-to-formal-use transitions, separate product,
-environment, and adoption conclusions, and economic adoptability. It fixes the
-semantic questions without imposing a section count, headings, or document
-form, and retains the default five-layer closure model and two instruction
-levels:
+Version 4.2.1 refines ownership, handoff, and evidence boundaries across the
+default five-layer closure model. It clarifies how to classify changed meaning,
+keep upper-layer constraints from becoming lower-layer design, route validation
+meaning and operating responsibility to their owners, and preserve factual L4
+implementation and verification evidence without inventing upper-layer meaning.
+It retains the prior L0 product-position closure and fixes semantic questions
+without imposing a section count, headings, or document form. The two
+instruction levels remain unchanged:
 
 - **Compact** is the default and applies the smallest control needed.
 - **Guided** loads additional guidance for work that needs a more detailed
   method.
 
-A binding project-local model remains authoritative. Installing this Skill
-does not automatically renumber, migrate, or reapprove an existing project's
+A binding project-local model remains authoritative. Installing this Skill does
+not automatically renumber, migrate, or reapprove an existing project's
 architecture or evidence.
 
 ## Install in Codex

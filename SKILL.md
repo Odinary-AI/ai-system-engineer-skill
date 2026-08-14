@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 4.2.0.
+Version 4.2.1.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -106,9 +106,52 @@ upper-layer design would not change the bounded decision or its evidence.
 Required outputs are semantics, not mandatory documents. Keep `proposed`,
 `human_confirmed`, `implemented`, and `verified` distinct at every layer.
 
+L0-L3 own normative decisions at different altitudes; L4 records
+implementation and verification facts. Classify affected meaning with these
+contextual ownership questions:
+
+- Does it change product meaning? Use L0.
+- Does it change system responsibility or boundary? Use L1.
+- Does it change an externally observable operational or domain contract? Use
+  L2.
+- Does it change only technical realization? Use L3.
+- Does it change only actual implementation or observed evidence? Use L4.
+
+These questions are aids, not a context-free keyword classifier. For mixed
+statements, split them by independently owned meaning. When one statement
+expresses both why the product exists or its intended outcome and the role the
+system performs, split and retain the L0 product purpose or outcome and the L1
+system responsibility. If lower-layer work would need to invent upper-layer
+meaning, stop and reopen the smallest owning upper scope instead of inventing
+that meaning. When handing off to a lower layer, upper layers state only
+constraints on lower-layer details: they cannot pre-design those details,
+repeat them, or become a second authority for them. After an upper-layer
+reopen, preserve still-valid lower-layer work and selectively invalidate only
+dependent scope.
+
+Route validation meaning by semantic effect, not by object keywords. L0 owns
+product-claim evidence meaning, L1 owns system-claim evidence meaning, L2 owns
+operational and domain-claim evidence meaning, and L3 owns design-claim
+evidence meaning; each owning normative layer states the minimum evidence state
+and applicable representativeness for its claim. Validation operating
+responsibility, permissions, and external process belong to L2. Technical
+validation design, environment, tools, interfaces, and isolation mechanisms
+belong to L3. A validation plan may live in an existing project delivery,
+testing, or governance authority and references the owning normative decisions;
+it is not a sixth layer or a mandatory artifact. L4 consumes the still-valid
+criteria and plan and records only what actually occurred. Planned work itself
+must not be classified as L4; retain only the still-valid plan as an input or
+reference for L4 execution. Actual execution and observed results belong to L4.
+
 ### L0 Product Position
 
 **Owns:** Why the product should exist and which outcome it is accountable for.
+
+Before placing meaning in L0, test whether it is a direct product
+responsibility, constraint, or red line that product authority can control or
+accept. Express external organizational, application, system, operational, or
+human responsibility as boundary, dependency, or non-goal meaning, then
+allocate it in L1 or L2.
 
 **Minimum inputs:** The affected users or beneficiaries, observed problem or
 opportunity, current product authority, material constraints, and known red
@@ -123,7 +166,9 @@ conclusion; in-scope and out-of-scope results and non-goals; material
 constraints and product red lines; and conditions that invalidate or reopen
 the product position. A project may merge or split these semantics without
 duplicate authority. Do not prescribe a section count, headings, artifact
-form, or discussion order.
+form, or discussion order. L0 states the minimum evidence state and applicable
+representativeness that permit a product claim. Minimum acceptable evidence is
+distinct from the cheapest or fastest validation method.
 
 Add only the supplements whose observable predicates apply:
 
@@ -135,7 +180,10 @@ Add only the supplements whose observable predicates apply:
   innovation-dependency contract below. Before L0 closes, make its assumption
   and scope, supported product conclusion, minimum evidence, validation owner,
   cheapest disposable validation, fallback, and L0 reopen condition explicit
-  in that authority; do not copy the full contract into L0.
+  in that authority; its validation owner and cheapest disposable validation
+  remain applicable. The contract references the owning normative decisions;
+  it does not reassign evidence meaning or become a second authority for
+  validation design or execution. Do not copy the full contract into L0.
 - If experimental, shadow, limited-pilot, and formal-use states differ,
   distinguish their claim boundaries. Without the specific-use validation
   required for a state, do not claim suitability for that use.
@@ -147,6 +195,9 @@ Add only the supplements whose observable predicates apply:
 - If core value depends on total cost, cycle time, or practical adoptability,
   define the comparison scope, costs that cannot be hidden, minimum evidence,
   fallback, and corresponding reopen condition.
+- If a product-critical concept is materially ambiguous, define its
+  product-level meaning, changed commitment, scope, and what it does not mean,
+  without imposing a fixed term list.
 
 **Exit standard:** All core semantics are complete; every supplement whose
 predicate is observed is resolved, while untriggered supplements are not added
@@ -174,9 +225,15 @@ relates to people, organizations, and external systems.
 authority, external actors and systems, ownership, material constraints,
 trust boundaries, and system-level risks or unproven dependencies.
 
-**Required semantic outputs:** System responsibility, boundary and context,
-external relationships, accountable ownership, system invariants, material
-constraints, and system-level failure absorption or fallback.
+**Required semantic outputs:** A meaning-preserving mapping from affected L0
+commitments and exclusions to inside and outside responsibility, external
+responsibility, trust relations, and failure absorption; system responsibility,
+boundary and context; external relationships; accountable ownership; system
+invariants; material constraints; and system-level failure absorption or
+fallback. The mapping must not broaden, narrow, or reinterpret L0. If it
+requires changed product meaning, stop and reopen or clarify L0. Keep
+boundary-dependent allocation details out of L0. L1 must not absorb or replace
+L0 product meaning.
 
 **Exit standard:** L2 can define operation without inventing system
 responsibility. L1 does not settle the full solution architecture.
@@ -200,8 +257,11 @@ scenarios, domain facts, roles and authority sources, lifecycle constraints,
 compliance obligations, and known failure or recovery cases.
 
 **Required semantic outputs:** Operational flows, state transitions, roles and
-decision rights, domain rules and contracts, invariants, exceptions, and
-failure and recovery semantics.
+decision rights, domain rules and contracts, and externally observable
+operational and domain contracts, including input and output business meaning
+and quality meaning; invariants, exceptions, and failure and recovery
+semantics; and validation operating responsibility, permissions, and external
+process when validation execution affects operation.
 
 **Exit standard:** L3 can design without inventing domain policy, operational
 authority, lifecycle meaning, or system responsibility.
@@ -227,7 +287,10 @@ relevant feasibility evidence.
 **Required semantic outputs:** Required capabilities, component and module
 responsibilities, public interfaces, data ownership and movement, dependency
 direction, runtime or deployment mechanisms when material, failure handling,
-and traceability to L2 contracts.
+protocols, fields, security controls, concrete recovery mechanisms, and
+traceability to L2 contracts. When validation needs technical realization,
+include its technical validation design, environment, tools, interfaces, and
+isolation mechanisms.
 
 **Exit standard:** L4 can implement without guessing design meaning, and the
 L3-to-L4 implementation-sufficiency check passes.
@@ -245,12 +308,14 @@ proves infeasible.
 
 ### L4 Implementation and Verification
 
-**Owns:** What was actually implemented and what the observed evidence can
-support.
+**Owns:** What was actually implemented, which validation actually ran, and
+what the observed evidence can support. It records actual validation execution,
+actual implementation, and observed evidence, not proposed validation work.
 
 **Minimum inputs:** Still-valid L3 design, bounded implementation scope,
-source and runtime environment, acceptance and verification criteria,
-deviations, and required operational evidence.
+source and runtime environment, still-valid acceptance and verification
+criteria, still-valid validation plan, deviations, and required operational
+evidence.
 
 **Required semantic outputs:** Implemented scope, verification results and
 environment, traceability to design, deviations, failures, residual risks,
@@ -262,7 +327,9 @@ consistency check passes before final confirmation.
 
 **Authority boundary:** Implementation and tests create implementation or
 verification evidence only; they cannot create product acceptance,
-`human_confirmed`, release approval, or system completion.
+`human_confirmed`, release approval, or system completion. These facts may
+support, refute, invalidate, or reopen L0-L3, but cannot rewrite or approve
+upper-layer meaning.
 
 **Constrains:** Only the bounded operational, readiness, installation, or
 release claims actually supported by corresponding evidence.
