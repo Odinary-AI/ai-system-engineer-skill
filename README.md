@@ -4,14 +4,13 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 4.2.1 refines ownership, handoff, and evidence boundaries across the
-default five-layer closure model. It clarifies how to classify changed meaning,
-keep upper-layer constraints from becoming lower-layer design, route validation
-meaning and operating responsibility to their owners, and preserve factual L4
-implementation and verification evidence without inventing upper-layer meaning.
-It retains the prior L0 product-position closure and fixes semantic questions
-without imposing a section count, headings, or document form. The two
-instruction levels remain unchanged:
+Version 4.3.0 adds a conditional project-validation-strategy method for material
+decisions, actions, and claims blocked by missing, conflicting, or insufficient
+validation authority. It assesses a single source or distributed authority set,
+returns an explicit disposition, and derives the smallest usable execution
+mapping without turning AI output, a write, or a conventional filename into
+project authority. It preserves project-local authority models and keeps
+routine testing outside ASE. The two instruction levels remain unchanged:
 
 - **Compact** is the default and applies the smallest control needed.
 - **Guided** loads additional guidance for work that needs a more detailed

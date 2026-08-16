@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 4.2.1.
+Version 4.3.0.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -142,6 +142,9 @@ it is not a sixth layer or a mandatory artifact. L4 consumes the still-valid
 criteria and plan and records only what actually occurred. Planned work itself
 must not be classified as L4; retain only the still-valid plan as an input or
 reference for L4 execution. Actual execution and observed results belong to L4.
+A project validation strategy may supply an authority-constrained execution
+mapping across those meanings, but it cannot redefine their owning claims,
+acceptance thresholds, or confirmation authority.
 
 ### L0 Product Position
 
@@ -528,6 +531,13 @@ implementation that depends on the unresolved decision.
 
 ## Method triggers
 
+- Project validation authority missing, conflicting, or insufficient when
+  cross-layer validation meaning, responsibility, evidence applicability, or
+  accountable-human confirmation blocks a named material decision, action, or
+  claim: read `references/project-validation-strategy.md`. Assess the existing
+  authority set before proposing the smallest usable strategy. Do not use this
+  method for routine testing with settled meaning; return to ordinary
+  verification when the strategy or current authority is sufficient.
 - Existing behavior at risk: characterization testing, then TDD with a
   realistic example. Preserve observed contracts before changing internals;
   stop when the named behavior is preserved and affected checks pass. A simple
