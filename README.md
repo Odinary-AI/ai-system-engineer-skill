@@ -4,6 +4,27 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
+## When to use
+
+Use this Skill only when an unresolved cross-layer system meaning, authority or
+lifecycle boundary, irreversible migration or recovery decision, or readiness
+claim blocks a material decision, action, or claim. An explicit read-only
+architecture scan is also supported when it names the architecture question and
+the restructuring decision it will inform.
+
+Do not use it for routine coding, local refactoring, ordinary debugging,
+documentation edits, package operations, or standard verification when
+requirements and authority are already settled. Keywords such as
+`architecture`, `migration`, or `readiness` do not establish applicability by
+themselves. If no concrete unresolved boundary and blocked outcome can be
+named, return to the ordinary task workflow.
+
+## Current version
+
+The `main` branch contains Version 4.3.1. The latest annotated tag and
+non-draft GitHub Release remain v4.3.0; a default clone installs `main`, not the
+latest tagged Release.
+
 Version 4.3.1 adds a conditional confirmation-readiness quality gate for
 proposed or reopened L0-L3 normative meaning. It references still-valid
 authority instead of resubmitting unchanged meaning and presents one bounded
@@ -22,6 +43,8 @@ architecture or evidence.
 
 ## Install in Codex
 
+The following commands install the current `main` branch into a new destination:
+
 ```bash
 git clone https://github.com/Odinary-AI/ai-system-engineer-skill.git
 mkdir -p ~/.codex/skills/ai-system-engineer
@@ -31,6 +54,11 @@ cp -R ai-system-engineer-skill/SKILL.md \
   ~/.codex/skills/ai-system-engineer/
 python3 ~/.codex/skills/ai-system-engineer/scripts/check_package.py
 ```
+
+For an upgrade, back up the existing destination and replace it as one unit
+before copying the new package. Do not merge-copy over an older installation:
+the checker detects missing or unexpected runtime files but does not restore the
+previous installation.
 
 For another Agent Skills-compatible host, use that host's normal installation
 method and preserve the destination directory name `ai-system-engineer`.
