@@ -4,13 +4,13 @@ An Agent Skill for AI-assisted system work that crosses product intent,
 architecture, authority, lifecycle, migration, recovery, irreversible change,
 or readiness-claim boundaries.
 
-Version 4.3.0 adds a conditional project-validation-strategy method for material
-decisions, actions, and claims blocked by missing, conflicting, or insufficient
-validation authority. It assesses a single source or distributed authority set,
-returns an explicit disposition, and derives the smallest usable execution
-mapping without turning AI output, a write, or a conventional filename into
-project authority. It preserves project-local authority models and keeps
-routine testing outside ASE. The two instruction levels remain unchanged:
+Version 4.3.1 adds a conditional confirmation-readiness quality gate for
+proposed or reopened L0-L3 normative meaning. It references still-valid
+authority instead of resubmitting unchanged meaning and presents one bounded
+normative question as one confirmation request, while preserving separate
+owners and confirmation bands. The existing project-validation-strategy method,
+project-local authority precedence, and routine-task exit boundary remain
+unchanged. The two instruction levels remain unchanged:
 
 - **Compact** is the default and applies the smallest control needed.
 - **Guided** loads additional guidance for work that needs a more detailed

@@ -5,7 +5,7 @@ description: Use only when work must resolve a material cross-layer system decis
 
 # AI System Engineer
 
-Version 4.3.0.
+Version 4.3.1.
 
 Apply the smallest control that prevents the model from guessing system meaning
 or overstating a claim.
@@ -105,6 +105,17 @@ descend only when the next layer can proceed without guessing. Exit when more
 upper-layer design would not change the bounded decision or its evidence.
 Required outputs are semantics, not mandatory documents. Keep `proposed`,
 `human_confirmed`, `implemented`, and `verified` distinct at every layer.
+
+Before presenting proposed or reopened L0-L3 normative meaning for an
+accountable-human decision, make it a confirmation-ready semantic delta.
+Reference current still-valid authority and confirmations for unchanged
+meaning, and put only new or changed owning-layer meaning in the candidate.
+Present one bounded normative question as one confirmation request with
+addressable clauses. Split independently owned questions, different
+accountable authorities, and existing confirmation bands; clause count does
+not create confirmation count. If the delta or decision boundary is not yet
+clear, return a draft and the single blocking question instead of requesting
+confirmation.
 
 L0-L3 own normative decisions at different altitudes; L4 records
 implementation and verification facts. Classify affected meaning with these
