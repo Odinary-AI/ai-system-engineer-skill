@@ -1,41 +1,42 @@
 # AI System Engineer
 
-An Agent Skill for AI-assisted system work that crosses product intent,
-architecture, authority, lifecycle, migration, recovery, irreversible change,
-or readiness-claim boundaries.
+An independently callable and re-entrant system-engineering method Skill for
+developing, evolving, and restructuring complex systems with AI coding.
 
 ## When to use
 
-Use this Skill only when an unresolved cross-layer system meaning, authority or
-lifecycle boundary, irreversible migration or recovery decision, or readiness
-claim blocks a material decision, action, or claim. An explicit read-only
-architecture scan is also supported when it names the architecture question and
-the restructuring decision it will inform.
+Use this Skill when either:
+
+- a complex-system startup or material new delivery path needs a bounded
+  system-engineering result before ordinary implementation can be scoped; or
+- existing work is blocked by unresolved system meaning, decision authority,
+  architecture, migration, delivery continuity, evidence, or claim boundaries.
+
+An explicit read-only architecture scan is also supported when it names the
+architecture question and the restructuring decision it will inform.
 
 Do not use it for routine coding, local refactoring, ordinary debugging,
 documentation edits, package operations, or standard verification when
-requirements and authority are already settled. Keywords such as
-`architecture`, `migration`, or `readiness` do not establish applicability by
-themselves. If no concrete unresolved boundary and blocked outcome can be
-named, return to the ordinary task workflow.
+requirements, authority, and evidence are already settled. Keywords, repository
+size, file count, project duration, or generic architecture language do not
+establish applicability by themselves. If no startup result or intervention
+blocker can be named, return to the ordinary task workflow.
 
 ## Current version
 
-The `main` branch contains Version 4.3.1. The latest annotated tag and
-non-draft GitHub Release remain v4.3.0; a default clone installs `main`, not the
-latest tagged Release.
+This package contains Version 5.0.0. It replaces fixed depth modes and
+lifecycle-shaped closure machinery with:
 
-Version 4.3.1 adds a conditional confirmation-readiness quality gate for
-proposed or reopened L0-L3 normative meaning. It references still-valid
-authority instead of resubmitting unchanged meaning and presents one bounded
-normative question as one confirmation request, while preserving separate
-owners and confirmation bands. The existing project-validation-strategy method,
-project-local authority precedence, and routine-task exit boundary remain
-unchanged. The two instruction levels remain unchanged:
+- a startup/intervention mission gate and four-step bounded mission loop;
+- a five-layer semantic coordinate that is not a development lifecycle;
+- five observable problem domains routing 21 reusable methods; and
+- proportional reference loading, ordinary-workflow handoff, and explicit
+  re-entry conditions.
 
-- **Compact** is the default and applies the smallest control needed.
-- **Guided** loads additional guidance for work that needs a more detailed
-  method.
+ASE does not own routine planning, coding, TDD, debugging, review, Git, CI,
+installation, publication, or release execution. It may precede or interrupt an
+ordinary coding workflow for a named system-engineering mission, then exits as
+soon as that workflow can proceed without guessing upper-layer meaning.
 
 A binding project-local model remains authoritative. Installing this Skill does
 not automatically renumber, migrate, or reapprove an existing project's
@@ -65,16 +66,8 @@ method and preserve the destination directory name `ai-system-engineer`.
 
 ## Use
 
-Compact:
-
 ```text
 Use $ai-system-engineer to review this system decision.
-```
-
-Guided:
-
-```text
-Use $ai-system-engineer in guided mode for this migration decision.
 ```
 
 The Skill keeps accountable product, architecture, lifecycle, authority, and

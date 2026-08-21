@@ -1,15 +1,17 @@
 # Codebase Architecture Scan
 
-Read this reference only for the architecture-scan trigger in `SKILL.md`.
-`SKILL.md` remains the sole semantic authority. This method is a read-only
-diagnosis that returns evidence and candidate directions; it is not a design
-or refactoring task.
+Read this reference only after the Codebase architecture scan method in
+`architecture-and-assumptions.md` matches the mission. `SKILL.md` remains the
+sole cross-cutting semantic authority. This method is a read-only diagnosis
+that returns evidence-ranked candidates; it is not a design or refactoring
+task.
 
 ## Applicability and boundary
 
-Use this method when the user requests an architecture health scan, a search
-for deep or shallow module opportunities, seam improvement, architecture
-hotspot analysis, or evidence-ranked candidates before refactoring.
+Use this method for an intervention mission when the user requests an
+architecture health scan, a search for deep or shallow module opportunities,
+seam improvement, architecture hotspot analysis, or evidence-ranked candidates
+before a restructuring decision.
 
 It may also apply when current inspection exposes material cross-file
 friction: behavior repeatedly changes across callers, understanding one
@@ -184,11 +186,11 @@ Stop after the candidate report or the no-supported-candidate result.
 - Do not update project authority.
 - Do not approve or implement a candidate.
 
-When the user selects a candidate, end this diagnosis and start a separate
-`design-change`. In the first continuation response, state that the diagnosis
-has ended and a separate `design-change` has begun before asking design
-questions. Re-establish the selected goal and scope, current L3 responsibility
-and authority, alternatives when risk warrants, migration and compatibility,
+When the user selects a candidate, end this diagnosis and hand off to a
+separate design task. In the first continuation response, state that the scan
+has ended and the design task has begun before asking design questions.
+Re-establish the selected goal and scope, current L3 responsibility and
+authority, alternatives when risk warrants, migration and compatibility,
 recovery and stopping, test surface and realistic evidence, and human decision
 boundaries before implementation.
 
